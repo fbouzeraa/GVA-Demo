@@ -1,6 +1,8 @@
 trigger AccountTrigger on Account (before insert, before update, after update, after insert, before delete, after delete, after undelete){
     switch on Trigger.operationType {
 
+        // test de commit 
+        
         when BEFORE_INSERT {
             if(PAD.canTrigger('DFG152Package')) {
                 AP01_AccountTriggerHandler.AP01_AccountTriggerHandler(null, null, 'beforeInsert', trigger.new);
